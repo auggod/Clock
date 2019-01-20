@@ -22,8 +22,8 @@ app.on('ready', () => {
 
   this.tray = new Tray(image)
 
-  this.format_button = macos ? 'right-click' : 'click';
-  this.tray.on(this.format_button, () => { this.toggle_format(); this.update(); });
+  this.tray.on('click', () => { this.update() })
+  this.tray.on('right-click', () => { this.toggle_format(); this.update(); });
 
   reminder.add("stand",45)
   reminder.add("drink",30)
